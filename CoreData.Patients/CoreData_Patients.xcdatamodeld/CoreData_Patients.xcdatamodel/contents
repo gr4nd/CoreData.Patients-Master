@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7527" systemVersion="14F1808" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Patient" representedClassName="Patient" syncable="YES">
+        <attribute name="patientFirstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="patientLastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="prescriptions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Prescription" inverseName="patient" inverseEntity="Prescription" syncable="YES"/>
+    </entity>
+    <entity name="Prescription" representedClassName="Prescription" syncable="YES">
+        <attribute name="prescriptionInstrusctions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prescriptionName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="prescriptions" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Patient" positionX="-306" positionY="108" width="128" height="88"/>
+        <element name="Prescription" positionX="-54" positionY="9" width="128" height="88"/>
+    </elements>
+</model>
